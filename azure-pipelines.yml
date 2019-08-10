@@ -15,7 +15,7 @@ stages:
 - stage: Build
   displayName: Build image
   jobs:  
-  - job: Build
+  - job: Build-captainkube
     displayName: Build captainkube
     pool:
       vmImage: 'ubuntu-latest'
@@ -27,7 +27,7 @@ stages:
         dockerfile: 'captainkube/Dockerfile'
         tags: |
           $(tag)
-  - job: Build
+  - job: Build-nodebrady
     displayName: Build nodebrady
     pool:
       vmImage: 'ubuntu-latest'
@@ -39,7 +39,7 @@ stages:
         dockerfile: 'nodebrady/Dockerfile'
         tags: |
           $(tag)
-  - job: Build
+  - job: Build-parrot
     displayName: Build parrot
     pool:
       vmImage: 'ubuntu-latest'
@@ -51,7 +51,7 @@ stages:
         dockerfile: 'parrot/Dockerfile'
         tags: |
           $(tag)
-  - job: Build
+  - job: Build-phippy
     displayName: Build phippy
     pool:
       vmImage: 'ubuntu-latest'
