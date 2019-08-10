@@ -10,4 +10,4 @@ service:
   internalPort: 3333
 ingress:
   enabled: false
-  #basedomain: CHANGE_TO_YOUR_DNS.REGION.aksapp.io # replace with your own from the portal # replace with your own from the portal
+  basedomain: 88b6ed8ea2a349f4a049.westeurope.aksapp.io
