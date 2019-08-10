@@ -16,7 +16,7 @@ stages:
   displayName: Build image
   jobs:  
   - job: Build
-    displayName: Build
+    displayName: Build captainkube
     pool:
       vmImage: 'ubuntu-latest'
     steps:
@@ -24,6 +24,42 @@ stages:
       displayName: Build an image
       inputs:
         command: build
-        dockerfile: '**/Dockerfile'
+        dockerfile: 'captainkube/Dockerfile'
+        tags: |
+          $(tag)
+  - job: Build
+    displayName: Build nodebrady
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: Docker@2
+      displayName: Build an image
+      inputs:
+        command: build
+        dockerfile: 'nodebrady/Dockerfile'
+        tags: |
+          $(tag)
+  - job: Build
+    displayName: Build parrot
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: Docker@2
+      displayName: Build an image
+      inputs:
+        command: build
+        dockerfile: 'parrot/Dockerfile'
+        tags: |
+          $(tag)
+  - job: Build
+    displayName: Build phippy
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: Docker@2
+      displayName: Build an image
+      inputs:
+        command: build
+        dockerfile: 'phippy/Dockerfile'
         tags: |
           $(tag)
